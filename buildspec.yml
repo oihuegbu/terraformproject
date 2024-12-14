@@ -1,0 +1,8 @@
+version: 0.2
+
+env:
+
+phases:
+  install:
+    commands:
+    - echo Installing Terraform...

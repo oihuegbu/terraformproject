@@ -3,6 +3,7 @@ version: 0.2
 phases:
   install:
     commands:
+    - echo Entered the install phase..
     - sudo apt update -y
     - echo Downloading Terraform...
     - wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
@@ -12,3 +13,7 @@ phases:
     - sudo apt install terraform -y
     - terraform -version
     - terraform init
+  build:
+    commands:
+    - echo Entered the build phase...
+    - terraform plan

@@ -3,9 +3,10 @@ version: 0.2
 phases:
   install:
     commands:
-    - sudo apt update
+    - sudo apt-get update -y
     - echo Downloading Terraform...
-    - wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+    - wget -qO - https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+    - echo "deb [arch=amd64] https://apt.releases.hashicorp.com/ubuntu focal main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
     - echo Install Terraform...
-    - sudo apt install terraform
+    - sudo apt-get install terraform -y
     - terraform -version

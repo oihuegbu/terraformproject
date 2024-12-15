@@ -16,4 +16,4 @@ phases:
   build:
     commands:
     - echo Entered the build phase...
-    - terraform plan
+    - terraform apply -auto-approve

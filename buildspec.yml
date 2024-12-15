@@ -16,5 +16,5 @@ phases:
   build:
     commands:
     - echo Entered the build phase...
-    - terraform plan
     - terraform force-unlock -force 67d3918d-2295-6d86-40d5-4787af8f4d98
+    - terraform plan

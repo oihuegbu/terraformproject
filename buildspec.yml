@@ -14,11 +14,6 @@ phases:
     - terraform -version
     - terraform init
     - terraform import aws_iam_role.iam_for_codebuild iam_for_codebuild
-    - terraform import aws_iam_role.codepipeline iam_for_codepipeline
-    - terraform import aws_iam_policy.codebuild_policy uchicago_codebuild_policy
-    - terraform import aws_iam_policy.codepipeline_policy uchicago_pipeline_policy
-    - terraform import aws_codepipeline.codepipeline uni-chicago-pipeline
-    - terraform import aws_codebuild_project.unichicago_build uni-chicago
   build:
     commands:
     - echo Entered the build phase...

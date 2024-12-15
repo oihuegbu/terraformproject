@@ -8,9 +8,3 @@ resource "aws_s3_object" "lambda_code" {
     key    = "lambda_function.zip"
     source = "lambda_function.zip"
 }
-
-
-//codepipeliine bucket
-resource "aws_s3_bucket" "codepipeline_bucket" {
-    bucket = "unichicago-codepipeline-bucket"
-}

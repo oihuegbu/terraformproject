@@ -54,7 +54,7 @@ EOF
 //iam policy for codebuild
 resource "aws_iam_role_policy" "ucodebuild_policy" {
     name = "uchicago_codebuild_policy"
-    role = aws_iam_role.iam_for_codebuild.id
+    role = aws_iam_role.iam_for_ucodebuild.id
 
     policy = <<EOF
 {

@@ -227,3 +227,102 @@ EOF
     #   ignore_changes = all
     # }
 }
+
+
+//iam role for codepipeline
+resource "aws_iam_role" "iam_for_ucodepipeline" {
+  name = "iam_for_codepipeline"
+
+  assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": "sts:AssumeRole",
+      "Principal": {
+        "Service": "codepipeline.amazonaws.com"
+      },
+      "Effect": "Allow",
+      "Sid": ""
+    }
+  ]
+}
+EOF
+
+    # lifecycle {
+    #   prevent_destroy = true
+    #   ignore_changes = all
+    # }
+}
+
+//iam policy for codepipeline
+resource "aws_iam_role_policy" "ucodepipeline_policy" {
+    name = "uchicago_pipeline_policy"
+    role = aws_iam_role.iam_for_ucodepipeline.id
+
+    policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect":"Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:GetObjectVersion",
+        "s3:GetBucketVersioning",
+        "s3:PutObject"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "codebuild:BatchGetBuilds",
+        "codebuild:StartBuild"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:GetLogEvents",
+        "logs:CreateLogStream",
+        "logs:CreateLogGroup"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:PutLogEvents",
+        "logs:GetLogEvents",
+        "logs:CreateLogStream",
+        "logs:CreateLogGroup"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "codepipeline:GetPipeline"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetRolePolicy",
+        "iam:ListRolePolicies",
+        "iam:ListAttachedRolePolicies"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+EOF
+
+    # lifecycle {
+    #   prevent_destroy = true
+    #   ignore_changes = all
+    # }
+}

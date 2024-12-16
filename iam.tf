@@ -25,12 +25,12 @@ resource "aws_iam_policy_attachment" "lambda_policy_attachment"{
     policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
-//iam role for codebuild
-resource "aws_iam_role" "iam_for_codebuild" {
+# //iam role for codebuild
+# resource "aws_iam_role" "iam_for_codebuild" {
 
-}
+# }
 
-//iam policy for codebuild
-resource "aws_iam_role_policy" "codebuild_policy" {
+# //iam policy for codebuild
+# resource "aws_iam_role_policy" "codebuild_policy" {
 
-}
+# }

@@ -22,7 +22,7 @@ resource "aws_codepipeline" "codepipeline" {
             Owner = "oihuegbu"
             Repo = "terraformproject"
             Branch = "main"
-            OAuthToken = "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"
+            OAuthToken = "xxxxxx"
         }
       }
     }

@@ -1,6 +1,7 @@
 resource "aws_codepipeline" "codepipeline" {
     name     = "university-chicago-pipeline"
-    role_arn = aws_iam_role.iam_for_codepipeline.arn
+    //role_arn = aws_iam_role.iam_for_codepipeline.arn
+    role_arn = aws_iam_role.uni_codepipeline_policy.arn
 
     artifact_store {
         location = aws_s3_bucket.codepipeline_bucket.bucket

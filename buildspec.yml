@@ -14,6 +14,7 @@ phases:
     - terraform -version
     - terraform init
     - terraform apply -auto-approve
+    - terraform import aws_iam_role.iam_for_lambda iam_for_lambda
   build:
     commands:
     - echo Entered the build phase...

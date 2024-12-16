@@ -14,6 +14,7 @@ phases:
     - terraform -version
     - terraform init
     - terraform import aws_iam_role.iam_for_codebuild iam_for_codebuild
+    - terraform import aws_iam_policy.codebuild_policy uchicago_codebuild_policy
     - terraform plan
     - terraform apply -auto-approve
   build:

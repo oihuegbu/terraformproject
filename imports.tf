@@ -3,6 +3,11 @@ import {
     id = "iam_for_codebuild"
 }
 
+import {
+    to = aws_iam_policy.codebuild_policy
+    id = "uchicago_codebuild_policy"
+}
+
 # import {
 #     to = aws_iam_role.codepipeline
 #     id = "iam_for_codepipeline"

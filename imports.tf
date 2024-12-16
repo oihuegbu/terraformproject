@@ -24,6 +24,6 @@ import {
 }
 
 import {
-    to = aws_codebuild_project.unichicago_build
+    to = aws_codebuild_project.uchicago_build
     id = "uni-chicago"
 }

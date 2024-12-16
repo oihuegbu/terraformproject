@@ -23,9 +23,9 @@ resource "aws_codebuild_project" "uchicago_build" {
       type = "CODEPIPELINE"
     }
 
-    # lifecycle {
-    #   prevent_destroy = true
-    #   ignore_changes = all
-    # }
+    lifecycle {
+      prevent_destroy = true
+      ignore_changes = all
+    }
 
 }

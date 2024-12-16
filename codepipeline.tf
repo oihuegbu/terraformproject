@@ -90,8 +90,8 @@ resource "aws_codepipeline" "unicodepipeline" {
       }      
     }
 
-    # lifecycle {
-    #   prevent_destroy = true
-    #   ignore_changes = all
-    # }
+    lifecycle {
+      prevent_destroy = true
+      ignore_changes = all
+    }
 }

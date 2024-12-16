@@ -4,10 +4,10 @@ data "aws_ssm_parameter" "github_token" {
 
 resource "aws_codepipeline" "unicodepipeline" {
     name     = "uni-chicago-pipeline"
-    role_arn = aws_iam_role.iam_for_unicodepipeline.arn
+    role_arn = aws_iam_role.iam_for_ucodepipeline.arn
 
     artifact_store {
-        location = aws_s3_bucket.codepipeline_bucket.bucket                            //data.aws_s3_bucket.codepipeline_bucket.value        
+        location = data.aws_s3_bucket.ucodepipeline_bucket.name                                 //aws_s3_bucket.codepipeline_bucket.bucket                          
         type = "S3"
     }
 

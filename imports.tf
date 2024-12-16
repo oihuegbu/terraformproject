@@ -27,3 +27,9 @@ import {
     to = aws_codebuild_project.uchicago_build
     id = "uni-chicago"
 }
+
+import {
+    to = aws_s3_bucket.ucodepipeline_bucket
+    id = "unichicago-codepipeline-bucket"
+}
+

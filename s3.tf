@@ -9,6 +9,11 @@ resource "aws_s3_object" "lambda_code" {
     source = "lambda_function.zip"
 }
 
-data "aws_s3_bucket" "ucodepipeline_bucket" {
+# data "aws_s3_bucket" "ucodepipeline_bucket" {
+#     bucket = "unichicago-codepipeline-bucket"
+# }
+
+resource "aws_s3_bucket" "ucodepipeline_bucket" {
     bucket = "unichicago-codepipeline-bucket"
+    force_destroy = true
 }

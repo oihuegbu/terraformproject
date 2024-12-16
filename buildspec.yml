@@ -13,8 +13,10 @@ phases:
     - sudo apt install terraform -y
     - terraform -version
     - terraform init
-    - terraform apply -auto-approve
     - terraform import aws_iam_role.iam_for_lambda iam_for_lambda
+    - terraform import aws_codebuild_project.unichicago_build uni-chicago
+    - terraform plan
+    - terraform apply -auto-approve
   build:
     commands:
     - echo Entered the build phase...

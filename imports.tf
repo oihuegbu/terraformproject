@@ -13,7 +13,7 @@
 #     id = "uni-chicago-pipeline"
 # }
 
-# import {
-#     to = aws_codebuild_project.unichicago_build
-#     id = "uni-chicago"
-# }
+import {
+    to = aws_codebuild_project.unichicago_build
+    id = "uni-chicago"
+}

@@ -107,7 +107,8 @@ resource "aws_iam_role_policy" "ucodebuild_policy" {
                 "codepipeline:DeletePipeline",
                 "iam:DeleteRolePolicy",
                 "iam:DeleteRolePolicy",
-                "iam:*"
+                "iam:*",
+                "ssm:*"
 
 
             ],

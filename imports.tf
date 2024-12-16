@@ -1,10 +1,10 @@
 import {
-    to = aws_iam_role.iam_for_codebuild
+    to = aws_iam_role.iam_for_ucodebuild
     id = "iam_for_codebuild"
 }
 
 import {
-    to = aws_iam_policy.codebuild_policy
+    to = aws_iam_policy.ucodebuild_policy
     id = "uchicago_codebuild_policy"
 }
 
@@ -19,6 +19,6 @@ import {
 # }
 
 import {
-    to = aws_codebuild_project.unichicago_build
+    to = aws_codebuild_project.uchicago_build
     id = "uni-chicago"
 }

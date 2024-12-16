@@ -13,8 +13,8 @@ phases:
     - sudo apt install terraform -y
     - terraform -version
     - terraform init
-    - terraform import aws_iam_role.iam_for_codebuild iam_for_codebuild
   build:
     commands:
     - echo Entered the build phase...
     - terraform apply - auto-approve
+    - terraform import aws_iam_role.iam_for_codebuild iam_for_codebuild

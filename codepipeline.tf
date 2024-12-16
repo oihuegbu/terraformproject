@@ -7,7 +7,7 @@ resource "aws_codepipeline" "unicodepipeline" {
     role_arn = aws_iam_role.iam_for_unicodepipeline.arn
 
     artifact_store {
-        location = data.aws_s3_bucket.codepipeline_bucket.value         //aws_s3_bucket.codepipeline_bucket.bucket
+        location = aws_s3_bucket.codepipeline_bucket.bucket                            //data.aws_s3_bucket.codepipeline_bucket.value        
         type = "S3"
     }
 

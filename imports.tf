@@ -3,11 +3,6 @@ import {
     id = "iam_for_codebuild"
 }
 
-import {
-    to = aws_iam_role.iam_for_codebuild.arn
-    id = "iam_for_codebuild"
-}
-
 # import {
 #     to = aws_iam_role.codepipeline
 #     id = "iam_for_codepipeline"

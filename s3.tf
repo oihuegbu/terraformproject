@@ -15,6 +15,6 @@ resource "aws_s3_object" "lambda_code" {
 # }
 
 resource "aws_s3_bucket" "ucodepipeline_bucket" {
-    bucket = "demo-codepipeline-bucket"
+    bucket = "demo-uchicago-bucket"
     force_destroy = true
 }

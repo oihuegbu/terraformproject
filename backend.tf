@@ -8,7 +8,7 @@ terraform {
 
   backend "s3" {
     //bucket         	   = "uchicago-tfstate"
-    bucket         	   = "demo-uchicago-bucket"                   //aws_s3_bucket.ucodepipeline_bucket.bucket
+    bucket         	   = "pipeline-uchicago-bucket"                   //aws_s3_bucket.ucodepipeline_bucket.bucket
     key              	   = "state/terraform.tfstate"
     region         	   = "us-east-1"
     encrypt        	   = true

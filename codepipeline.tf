@@ -2,9 +2,9 @@ data "aws_ssm_parameter" "github_token" {
     name = "githubtoken"
 }
 
-resource "aws_codepipeline" "codepipeline" {
+resource "aws_codepipeline" "ucodepipeline" {
     name     = "uni-chicago-pipeline"
-    role_arn = aws_iam_role.iam_for_codepipeline.arn
+    role_arn = aws_iam_role.iam_for_ucodepipeline.arn
 
     artifact_store {
         location = aws_s3_bucket.codepipeline_bucket.bucket                                     //data.aws_s3_bucket.ucodepipeline_bucket.value                                 //aws_s3_bucket.codepipeline_bucket.bucket                          

@@ -12,6 +12,6 @@ terraform {
     key              	   = "state/terraform.tfstate"
     region         	   = "us-east-1"
     encrypt        	   = true
-    dynamodb_table = "demo_table"                      //aws_dynamodb_table.demo_table.name
+    dynamodb_table = "unichicagoTable"                      //aws_dynamodb_table.demo_table.name
   }
 }

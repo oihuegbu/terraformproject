@@ -1,12 +1,8 @@
 # provider info. Region set in variables.tf folder
 
-# data "aws_ssm_parameter" "unichi_access_key" {
-#   name = "/UC_KEY/UC_ACCESS_KEY"
-# }
-
-# data "aws_ssm_parameter" "unicbi_secret_key" {
-#   name = "/UC_SECRET/UC_SECRET_KEY"
-# }
+data "aws_dynamodb_table" "demo_table" {
+    name = "demo_table"
+}
 
 provider "aws" {
   region = "us-east-1"

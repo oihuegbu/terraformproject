@@ -28,8 +28,8 @@
 #     id = "uni-chicago"
 # }
 
-# import {
-#     to = aws_s3_bucket.ucodepipeline_bucket
-#     id = "unichicago-codepipeline-bucket"
-# }
+import {
+    to = aws_s3_bucket.ucodepipeline_bucket
+    id = "demo-codepipeline-bucket"
+}
 

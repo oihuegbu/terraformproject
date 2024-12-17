@@ -17,6 +17,6 @@ phases:
     commands:
     - echo Entered the build phase...
     - if [ "$deploy" = "0" ]; then terraform plan; else terraform apply -auto-approve; fi
+    - terraform apply -auto-approve
     - echo Successfully deployed AWS S3 bucket, Lambda, IAM permissions, EventBridge, Events rule
     - terraform destroy -auto-approve
-    - echo Successfully deployed AWS S3 bucket, Lambda, IAM permissions, EventBridge, Events rule

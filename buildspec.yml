@@ -13,7 +13,7 @@ phases:
     - sudo apt install terraform -y
     - terraform -version
     - terraform init
-    - terraform plan
   build:
     commands:
     - echo Entered the build phase...
+    - if [ "$deploy" = "0" ]; then terraform plan; else terraform apply -auto-approve; fi

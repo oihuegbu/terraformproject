@@ -17,7 +17,7 @@ phases:
     - terraform import aws_iam_role_policy.ucodebuild_policy iam_for_codebuild:uchicago_codebuild_policy
     - terraform import aws_iam_role.iam_for_ucodepipeline iam_for_codepipeline
     - terraform import aws_iam_role_policy.ucodepipeline_policy iam_for_codepipeline:uchicago_pipeline_policy
-    - terraform import aws_codebuild_project.uchicago_build uni-chicago
+    - terraform import aws_codebuild_project.unichicago_build uni-chicago
     - terraform import aws_codepipeline.ucodepipeline uni-chicago-pipeline
     - terraform import aws_s3_bucket.ucodepipeline_bucket unichicago-codepipeline-bucket
     - terraform plan

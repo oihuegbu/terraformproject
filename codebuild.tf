@@ -1,31 +1,33 @@
-# resource "aws_codebuild_project" "uchicago_build" {
-#     name = "uni-chicago"
-#     service_role = aws_iam_role.iam_for_ucodebuild.arn
+terraform import aws_codebuild_project.uchicago_build uni-chicago
 
-#     source {
-#       type = "CODEPIPELINE"
-#       location = "https://github.com/oihuegbu/terraformproject.git"
-#       buildspec = "buildspec.yml"
-#     }
+resource "aws_codebuild_project" "uchicago_build" {
+    name = "uni-chicago"
+    service_role = aws_iam_role.iam_for_ucodebuild.arn
 
-#     environment {
-#         compute_type = "BUILD_GENERAL1_SMALL"
-#         image = "aws/codebuild/standard:7.0"
-#         type = "LINUX_CONTAINER"
+    source {
+      type = "CODEPIPELINE"
+      location = "https://github.com/oihuegbu/terraformproject.git"
+      buildspec = "buildspec.yml"
+    }
 
-#         environment_variable {
-#           name = "deploy"
-#           value = "0"
-#         }
-#     }
+    environment {
+        compute_type = "BUILD_GENERAL1_SMALL"
+        image = "aws/codebuild/standard:7.0"
+        type = "LINUX_CONTAINER"
 
-#     artifacts {
-#       type = "CODEPIPELINE"
-#     }
+        environment_variable {
+          name = "deploy"
+          value = "0"
+        }
+    }
 
-#     lifecycle {
-#       prevent_destroy = true
-#       ignore_changes = all
-#     }
+    artifacts {
+      type = "CODEPIPELINE"
+    }
 
-# }
+    lifecycle {
+      prevent_destroy = true
+      ignore_changes = all
+    }
+
+}

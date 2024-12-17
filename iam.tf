@@ -1,3 +1,9 @@
+terraform import aws_iam_role.iam_for_ucodebuild iam_for_codebuild
+terraform import aws_iam_role_policy.ucodebuild_policy iam_for_codebuild:uchicago_codebuild_policy
+terraform import aws_iam_role.iam_for_ucodepipeline iam_for_codepipeline
+terraform import aws_iam_role_policy.ucodepipeline_policy iam_for_codepipeline:uchicago_pipeline_policy
+
+
 //iam role for lambda
 resource "aws_iam_role" "iam_for_lambda" {
   name = "iam_for_lambda"

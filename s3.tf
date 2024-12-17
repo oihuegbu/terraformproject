@@ -1,3 +1,5 @@
+terraform import aws_s3_bucket.ucodepipeline_bucket unichicago-codepipeline-bucket
+
 //lambda bucket
 resource "aws_s3_bucket" "lambda_bucket" {
     bucket = "uchicago-lambda-code-bucket"

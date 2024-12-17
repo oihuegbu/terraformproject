@@ -13,13 +13,6 @@ phases:
     - sudo apt install terraform -y
     - terraform -version
     - terraform init
-    - terraform import aws_iam_role.iam_for_ucodebuild iam_for_codebuild
-    - terraform import aws_iam_role_policy.ucodebuild_policy iam_for_codebuild:uchicago_codebuild_policy
-    - terraform import aws_iam_role.iam_for_ucodepipeline iam_for_codepipeline
-    - terraform import aws_iam_role_policy.ucodepipeline_policy iam_for_codepipeline:uchicago_pipeline_policy
-    - terraform import aws_codepipeline.unicodepipeline uni-chicago-pipeline
-    - terraform import aws_codebuild_project.uchicago_build uni-chicago
-    - terraform import aws_s3_bucket.ucodepipeline_bucket unichicago-codepipeline-bucket
     - terraform plan
     - terraform apply -auto-approve
   build:

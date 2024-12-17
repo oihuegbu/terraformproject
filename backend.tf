@@ -8,10 +8,10 @@ terraform {
 
   backend "s3" {
     //bucket         	   = "uchicago-tfstate"
-    bucket         	   = aws_s3_bucket.ucodepipeline_bucket.bucket
+    bucket         	   = "demo-uchicago-bucket"                   //aws_s3_bucket.ucodepipeline_bucket.bucket
     key              	   = "state/terraform.tfstate"
     region         	   = "us-east-1"
     encrypt        	   = true
-    dynamodb_table = aws_dynamodb_table.demo_table.name
+    dynamodb_table = "demo_table"                      //aws_dynamodb_table.demo_table.name
   }
 }

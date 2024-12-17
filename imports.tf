@@ -30,6 +30,6 @@
 
 import {
     to = aws_s3_bucket.ucodepipeline_bucket
-    id = "pipeline-uchicago-bucket-tfstate"
+    id = "pipeline-uchicago-tfstate"
 }
 

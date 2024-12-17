@@ -1,4 +1,3 @@
-terraform import aws_codebuild_project.uchicago_build uni-chicago
 
 resource "aws_codebuild_project" "uchicago_build" {
     name = "uni-chicago"

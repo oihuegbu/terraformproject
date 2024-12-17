@@ -1,5 +1,3 @@
-terraform import aws_codepipeline.unicodepipeline uni-chicago-pipeline
-
 data "aws_ssm_parameter" "github_token" {
     name = "githubtoken"
 }

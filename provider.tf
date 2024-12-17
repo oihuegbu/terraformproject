@@ -1,7 +1,7 @@
 # provider info. Region set in variables.tf folder
 
 data "aws_dynamodb_table" "demo_table" {
-    name = "demo_table"
+    name = "unichicagoTable"
 }
 
 provider "aws" {

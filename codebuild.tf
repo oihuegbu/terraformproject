@@ -1,7 +1,7 @@
 
-resource "aws_codebuild_project" "uchicago_build" {
+resource "aws_codebuild_project" "chicago_build" {
     name = "uni-chicago"
-    service_role = aws_iam_role.iam_for_ucodebuild.arn
+    service_role = aws_iam_role.iam_for_codebuild.arn
 
     source {
       type = "CODEPIPELINE"

@@ -27,7 +27,7 @@ resource "aws_iam_policy_attachment" "lambda_policy_attachment"{
 }
 
 //iam role for codebuild
-resource "aws_iam_role" "iam_for_ucodebuild" {
+resource "aws_iam_role" "iam_for_codebuild" {
     name = "iam_for_codebuild"
 
   assume_role_policy = <<EOF
@@ -53,9 +53,9 @@ EOF
 }
 
 //iam policy for codebuild
-resource "aws_iam_role_policy" "ucodebuild_policy" {
+resource "aws_iam_role_policy" "codebuild_policy" {
     name = "uchicago_codebuild_policy"
-    role = aws_iam_role.iam_for_ucodebuild.id
+    role = aws_iam_role.iam_for_codebuild.id
 
     policy = <<EOF
 {
@@ -232,7 +232,7 @@ EOF
 
 
 //iam role for codepipeline
-resource "aws_iam_role" "iam_for_ucodepipeline" {
+resource "aws_iam_role" "iam_for_codepipeline" {
   name = "iam_for_codepipeline"
 
   assume_role_policy = <<EOF
@@ -258,9 +258,9 @@ EOF
 }
 
 //iam policy for codepipeline
-resource "aws_iam_role_policy" "ucodepipeline_policy" {
+resource "aws_iam_role_policy" "codepipeline_policy" {
     name = "uchicago_pipeline_policy"
-    role = aws_iam_role.iam_for_ucodepipeline.id
+    role = aws_iam_role.iam_for_codepipeline.id
 
     policy = <<EOF
 {
@@ -323,8 +323,8 @@ resource "aws_iam_role_policy" "ucodepipeline_policy" {
 }
 EOF
 
-    # lifecycle {
-    #   prevent_destroy = true
-    #   ignore_changes = all
-    # }
+    lifecycle {
+      prevent_destroy = true
+      ignore_changes = all
+    }
 }

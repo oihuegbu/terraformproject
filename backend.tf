@@ -7,10 +7,10 @@ terraform {
   }
 
   backend "s3" {
-    bucket         	   = "pipeline-uchicago-tfstate"                   //aws_s3_bucket.ucodepipeline_bucket.bucket
+    bucket         	   = "pipeline-uchicago-tfstate"
     key              	   = "state/terraform.tfstate"
     region         	   = "us-east-1"
     encrypt        	   = true
-    dynamodb_table = "unichicago"                      //aws_dynamodb_table.demo_table.name
+    dynamodb_table = "unichicago"
   }
 }
